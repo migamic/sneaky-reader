@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Consolas, Menlo, DejaVu Sans Mono, Courier, Courier New;
     background-color: #282c34;
     color: #abb2bf;
 }
@@ -12,8 +12,30 @@ body {
     top: 0;
     bottom: 0;
     width: 200px;
-    background-color: #21252b;
     overflow: auto;
+    background-color: #21252b;
+}
+
+.side-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.side-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.side-item:hover {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #333;
+    font-size: 14px;
 }
 
 .tab-bar {
@@ -24,7 +46,32 @@ body {
     height: 50px;
     background-color: #21252b;
     border-bottom: 1px solid #abb2bf;
+    display: flex;
+    justify-content: space-between;
 }
+
+.tab-list {
+    display: flex;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    align-items: center; 
+}
+
+.tab {
+    list-style: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    background-color: #24282f;
+    margin: 0 5px;
+  }
+
+.active-tab {
+    background-color: #282c34;
+    font-weight: bold;
+    color: #ffffff;
+  }
 
 .editor {
     position: absolute;
@@ -36,3 +83,15 @@ body {
     overflow: auto;
     padding: 20px;
 }
+
+.upload-btn {
+    padding: 10px 15px;
+    margin-right: 5px; 
+    background-color: #428646; 
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; 
+}
+
+

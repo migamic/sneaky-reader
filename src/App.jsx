@@ -18,7 +18,7 @@ const tabs = [
 
 function App() {
   const [text, setText] = useState([])
-  const [activeChapter, setActiveChapter] = useState([0])
+  const [activeChapter, setActiveChapter] = useState(0)
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function App() {
           />
         </div>
         <div className="sidebar">
-          <Sidebar setActiveChapter={setActiveChapter}/>
+          <Sidebar activeChapter={activeChapter} setActiveChapter={setActiveChapter}/>
         </div>
         <div className="editor">
         {

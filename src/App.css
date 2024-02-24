@@ -11,7 +11,7 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 200px;
+    width: 20%;
     overflow: auto;
     background-color: #21252b;
 }
@@ -30,17 +30,21 @@ body {
     font-size: 14px;
 }
 
+.side-item.active-item {
+  background-color: #222;
+  font-weight: bold;
+}
+
 .side-item:hover {
     padding: 5px 10px;
     cursor: pointer;
-    color: #ffffff;
     background-color: #333;
     font-size: 14px;
 }
 
 .tab-bar {
     position: absolute;
-    left: 200px;
+    left: 20%;
     right: 0;
     top: 0;
     height: 50px;
@@ -75,7 +79,7 @@ body {
 
 .editor {
     position: absolute;
-    left: 200px;
+    left: 20%;
     right: 0;
     top: 50px;
     bottom: 0;

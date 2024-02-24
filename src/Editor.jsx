@@ -20,7 +20,6 @@ const Editor = ( {chapter} ) => {
 
   return (
     <div>
-      {bookText && bookText.chapters && console.log(JSON.stringify(bookText.chapters[0].content)) }
       {bookText && bookText.chapters && bookText.chapters[chapter].content.map((paragraph, index_p) => (
         <p key={index_p}>
           {paragraph.paragraph.map((word, index_w) => (

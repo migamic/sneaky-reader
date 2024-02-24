@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 // Example array of file names, replace or populate this dynamically as needed
+
 const files = ['chapter1.html', 'chapter2.css', 'chapter3.js'];
 
 const Sidebar = () => {

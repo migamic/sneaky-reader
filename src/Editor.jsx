@@ -20,8 +20,9 @@ const Editor = ( {chapter} ) => {
   let charCount = 0;
   return (
     <div>
+      <ol id="text-code">
       {bookText && bookText.chapters && bookText.chapters[chapter].content.map((paragraph, index_p) => (
-        <p key={index_p}>
+        <li key={index_p}>
           {paragraph.paragraph.map((word, index_w) => {
             if (charCount < shownCharsNum) {
               if (charCount + word.word.length < shownCharsNum) {
@@ -35,8 +36,9 @@ const Editor = ( {chapter} ) => {
             }
             return null;
           })}
-        </p>
+        </li>
       ))}
+      </ol>
     </div>
   );
 };

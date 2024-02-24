@@ -5,12 +5,21 @@ import './App.css'
 import Sidebar from './Sidebar.jsx'
 import Tabbar from './Tabbar.jsx'
 import Editor from './Editor.jsx'
-
+import About from './About.jsx'
+import Contact from './Contact.jsx'
 export const BookContext = createContext();
+
+// Example Tab Data
+const tabs = [
+  { id: 1, title: 'Home', content: 'Home Page' },
+  { id: 2, title: 'About', content: 'About Page' },
+  { id: 3, title: 'Contact', content: 'Contact Page' }
+];
 
 function App() {
   const [text, setText] = useState([])
   const [activeChapter, setActiveChapter] = useState([0])
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   useEffect(() => {
     fetch('data/data.json')
@@ -23,13 +32,24 @@ function App() {
     <>
       <BookContext.Provider value={text}>
         <div>
-          <Tabbar />
+          <Tabbar 
+            activeTab={activeTab}
+            tabs={tabs}
+            setActiveTab={setActiveTab}
+          />
         </div>
         <div className="sidebar">
           <Sidebar setActiveChapter={setActiveChapter}/>
         </div>
         <div className="editor">
-          <Editor chapter={activeChapter}/>
+        {
+          {
+            1: <Editor chapter={activeChapter}/>,
+            2: <About />,
+            3: <Contact />
+          }[activeTab]
+        }
+
         </div>
       </BookContext.Provider>
     </>

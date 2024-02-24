@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,7 +9,15 @@ import Editor from './Editor.jsx'
 export const BookContext = createContext();
 
 function App() {
-  const [text, setText] = useState(["Lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit.", "\n", "Sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua.", "\n", "Ut", "enim", "ad", "minim", "veniam,", "quis", "nostrud", "exercitation", "ullamco", "laboris", "nisi", "ut", "aliquip", "ex", "ea", "commodo", "consequat.", "\n", "Duis", "aute", "irure", "dolor", "in", "reprehenderit", "in", "voluptate", "velit", "esse", "cillum", "dolore", "eu", "fugiat", "nulla", "pariatur.", "\n", "Excepteur", "sint", "occaecat", "cupidatat", "non", "proident,", "sunt", "in", "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id", "est", "laborum."])
+  const [text, setText] = useState([])
+  const [activeChapter, setActiveChapter] = useState([0])
+
+  useEffect(() => {
+    fetch('data/data.json')
+    .then(response => response.json())
+    .then(data => setText(data))
+    .catch(error => console.error('Error loading data:', error));
+  }, []);
 
   return (
     <>
@@ -21,7 +29,7 @@ function App() {
           <Sidebar />
         </div>
         <div className="editor">
-          <Editor />
+          <Editor chapter={activeChapter}/>
         </div>
       </BookContext.Provider>
     </>

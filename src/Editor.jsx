@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import { BookContext } from './App.jsx'
 
-const Editor = ( {text} ) => {
+const Editor = ( {chapter} ) => {
   const bookText = useContext(BookContext);
   const [shownWordsNum, setShownWordsNum] = useState(20);
 
@@ -20,9 +20,12 @@ const Editor = ( {text} ) => {
 
   return (
     <div>
-      {bookText.slice(0, shownWordsNum).map((word, index) => (
-        <span key={index}>{word} </span>
-      ))}
+      {bookText && bookText.chapters && console.log(JSON.stringify(bookText.chapters[0])) }
+      {bookText && bookText.chapters && 
+        <div>
+          {JSON.stringify(bookText.chapters[chapter])}
+        </div>
+      }
     </div>
 
   );

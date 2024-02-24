@@ -1,0 +1,81 @@
+{
+   "title":"Project title",
+   "author":"Author name",
+   "introduction":"this is a brief introduction, this should appear in the README.md of the project.",
+   "chapters":[
+      {
+         "title":"Chapter 1. A story begins",
+         "content":[
+            {
+               "paragraph":[
+                  {
+                     "word":"A",
+                     "color":"red"
+                  },
+                  {
+                     "word":" single",
+                     "color":"blue"
+                  },
+                  {
+                     "word":" woman",
+                     "color":"yellow"
+                  }
+               ]
+            },
+            {
+               "paragraph":[
+                  {
+                     "word":"A",
+                     "color":"red"
+                  },
+                  {
+                     "word":" married",
+                     "color":"blue"
+                  },
+                  {
+                     "word":" woman",
+                     "color":"yellow"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "title":"Chapter 2. A story ends",
+         "content":[
+            {
+               "paragraph":[
+                  {
+                     "word":"A",
+                     "color":"red"
+                  },
+                  {
+                     "word":" single",
+                     "color":"blue"
+                  },
+                  {
+                     "word":" man",
+                     "color":"yellow"
+                  }
+               ]
+            },
+            {
+               "paragraph":[
+                  {
+                     "word":"A",
+                     "color":"red"
+                  },
+                  {
+                     "word":" married",
+                     "color":"blue"
+                  },
+                  {
+                     "word":" man",
+                     "color":"yellow"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

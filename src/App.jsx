@@ -26,7 +26,7 @@ function App() {
           <Tabbar />
         </div>
         <div className="sidebar">
-          <Sidebar />
+          <Sidebar setActiveChapter={setActiveChapter}/>
         </div>
         <div className="editor">
           <Editor chapter={activeChapter}/>

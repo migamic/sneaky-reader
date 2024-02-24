@@ -51,6 +51,11 @@ function App() {
         }
 
         </div>
+        <div className='bottomBar'>
+          <div className='accentBar'>
+            Jaimito SL.
+          </div>
+        </div>
       </BookContext.Provider>
     </>
   )

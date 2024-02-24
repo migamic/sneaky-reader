@@ -5,13 +5,14 @@ const Tabbar = ({ tabs, setActiveTab, activeTab }) => {
   return (
     <div className="tab-bar">
       <ul className='tab-list'>
-        {tabs.map((tab) => (
+        {tabs.map((tab,indx) => (
           <li
             key={tab.id}
             className={`tab ${tab.id === activeTab ? "active-tab" : ""}`}
             onClick={() => setActiveTab(tab.id)}
           >
-            {tab.title}
+            <span>{`${indx+1}. ${tab.title}`}</span>
+            <span>&times;</span>
           </li>
         ))}
         

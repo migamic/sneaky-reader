@@ -7,11 +7,12 @@ import Tabbar from './Tabbar.jsx'
 import Editor from './Editor.jsx'
 import About from './About.jsx'
 import Contact from './Contact.jsx'
+import Iconbar from './Iconbar.jsx'
 export const BookContext = createContext();
 
 // Example Tab Data
 const tabs = [
-  { id: 1, title: 'Home', content: 'Home Page' },
+  { id: 1, title: 'Text', content: 'Home Page' },
   { id: 2, title: 'About', content: 'About Page' },
   { id: 3, title: 'Contact', content: 'Contact Page' }
 ];
@@ -38,6 +39,7 @@ function App() {
             setActiveTab={setActiveTab}
           />
         </div>
+        <div className="icon-bar"><Iconbar/></div>
         <div className="sidebar">
           <Sidebar activeChapter={activeChapter} setActiveChapter={setActiveChapter}/>
         </div>

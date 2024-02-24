@@ -8,11 +8,13 @@ body {
 
 .sidebar {
     position: fixed;
-    left: 0;
+    left: 50px;
     top: 0;
     bottom: 0;
-    min-width: 20%;
-    overflow: auto;
+    width: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-overflow: ellipsis;
     box-sizing: border-box;
     background-color: #21252b;
 }
@@ -30,8 +32,6 @@ body {
     padding-bottom: 0.65em;
     padding-left:1.5em;
     padding-right: 1.5em;
-    text-wrap: nowrap;
-    text-overflow: ellipsis;
     color: #ffffff;
     font-size: 14px;
 }
@@ -49,8 +49,8 @@ body {
 
 .tab-bar {
     position: absolute;
-    left: 20%;
-    right: 0;
+    left: 300px;
+    right: 0px;
     top: 0;
     height: 50px;
     background-color: #21252b;
@@ -88,7 +88,7 @@ body {
 
 .editor {
     position: absolute;
-    left: 20%;
+    left: 300px;
     right: 0;
     top: 50px;
     bottom: 0;
@@ -118,6 +118,26 @@ body {
     bottom: 0px;
     display: flex;
 }
+.icon-bar {
+    width: 50px; /* Adjust the width as needed */
+    background-color: #111; /* Example background color */
+    position:fixed;
+    top:0px;
+    z-index: 999;
+    height: 100%;
+    padding: 10px 0;
+    display: flex;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .icon {
+    margin-bottom: 10px; /* Space between icons */
+  }
+
 
 
 .accentBar {

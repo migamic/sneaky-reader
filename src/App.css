@@ -27,6 +27,9 @@ body {
 }
 
 .side-item {
+
+    width: 250px;
+    box-sizing: border-box;
     cursor: pointer;
     padding-top: 0.65em;
     padding-bottom: 0.65em;
@@ -34,6 +37,9 @@ body {
     padding-right: 1.5em;
     color: #ffffff;
     font-size: 14px;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .side-item.active-item {

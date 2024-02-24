@@ -9,7 +9,7 @@ const Sidebar = ( {activeChapter, setActiveChapter}) => {
   return (
     <ul className="side-list">
       {bookText && bookText.chapters && bookText.chapters.map((chapter, index) => (
-        <li key={index} className={`side-item ${index===activeChapter ? "active-item" : ""}`} onClick={() => setActiveChapter(index)}>
+        <li key={index} className={`side-item ${index===activeChapter ? "active-item" : ""}`} title={chapter.title} onClick={() => setActiveChapter(index)}>
           {emojis[index % emojis.length]}   {chapter.title}
         </li>
       ))}

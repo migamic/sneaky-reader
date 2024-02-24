@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <BookContext.Provider value={text}>
-        <div className="tab-bar">
+        <div>
           <Tabbar />
         </div>
         <div className="sidebar">

@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect, createContext, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,8 +8,12 @@ import Editor from './Editor.jsx'
 import About from './About.jsx'
 import Contact from './Contact.jsx'
 import Iconbar from './Iconbar.jsx'
-export const BookContext = createContext();
+import { startRead } from './book_beautifier';
 
+export const BookContext = createContext({
+  book: null,
+  setBook: () => {}
+});
 // Example Tab Data
 const tabs = [
   { id: 1, title: 'Text', content: 'Home Page' },
@@ -18,26 +22,34 @@ const tabs = [
 ];
 
 function App() {
-  const [text, setText] = useState([])
-  const [activeChapter, setActiveChapter] = useState(0)
+  const [book, setBook] = useState({ chapters: []});
+  const [activeChapter, setActiveChapter] = useState(0);
   const [activeTab, setActiveTab] = useState(tabs[0].id);
+  const fileInputRef = useRef(null);
 
-  useEffect(() => {
-    fetch('data/data.json')
-    .then(response => response.json())
-    .then(data => setText(data))
-    .catch(error => console.error('Error loading data:', error));
-  }, []);
+  const handleFileSelect = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      startRead(file, setBook);
+    }
+    console.log(book)
+  };
 
   return (
     <>
-      <BookContext.Provider value={text}>
+      <BookContext.Provider value={{ book, setBook }}>
+
+
+
         <div>
-          <Tabbar 
+          <Tabbar
             activeTab={activeTab}
             tabs={tabs}
             setActiveTab={setActiveTab}
-          />
+          >
+              <input type="file" onChange={handleFileSelect} ref={fileInputRef} style={{ display: 'none' }} />
+              <button onClick={() => fileInputRef.current.click()}>Upload Book</button>
+          </Tabbar>
         </div>
         <div className="icon-bar"><Iconbar/></div>
         <div className="sidebar">

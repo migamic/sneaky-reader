@@ -2,7 +2,7 @@ import JSZip from 'jszip';
 
 
 function startRead(file, setBook) {
-  
+
   if (file){
     getAsText(file, setBook);
   }
@@ -134,7 +134,7 @@ function loaded(evt, setBook) {
 
             //console.log(book)
 
-            exportToJsonFile(book); // Call function to export the book JSON
+            //exportToJsonFile(book); // Call function to export the book JSON
         })
         .catch(function(err) {
             // Handle any errors that occur during the process

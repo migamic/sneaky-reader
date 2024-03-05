@@ -2,22 +2,9 @@ import React, {useContext, useRef } from 'react';
 import { BookContext } from './App.jsx'
 import { startRead } from './book_beautifier';
 
-const Tabbar = ({ tabs, setActiveTab, activeTab }) => {
+const Tabbar = ({ tabs, setActiveTab, activeTab, handleFileSelect, fileInputRef }) => {
   const { setBook } = useContext(BookContext);
-  // const fileInputRef = useRef(null);
 
-  // const handleUploadClick = () => {
-  //   fileInputRef.current.click();
-  // };
-
-  // const handleProcessClick = () => {
-  //     const file = fileInputRef.current.files[0];
-  //     if (file) {
-  //       startRead(file, setBook); // Now passing setBook to startRead
-  //     } else {
-  //       alert('Please select a file first.');
-  //     }
-  // };
 
   return (
     <div className="tab-bar">
@@ -33,6 +20,8 @@ const Tabbar = ({ tabs, setActiveTab, activeTab }) => {
           </li>
         ))}
       </ul>
+      <input type="file" onChange={handleFileSelect} ref={fileInputRef} style={{ display: 'none' }} />
+      <button onClick={() => fileInputRef.current.click()}>Upload Book</button>
 
     </div>
   );

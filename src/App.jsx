@@ -32,7 +32,6 @@ function App() {
     if (file) {
       startRead(file, setBook);
     }
-    console.log(book)
   };
 
   return (
@@ -46,10 +45,9 @@ function App() {
             activeTab={activeTab}
             tabs={tabs}
             setActiveTab={setActiveTab}
-          >
-              <input type="file" onChange={handleFileSelect} ref={fileInputRef} style={{ display: 'none' }} />
-              <button onClick={() => fileInputRef.current.click()}>Upload Book</button>
-          </Tabbar>
+            handleFileSelect={handleFileSelect}
+            fileInputRef={fileInputRef}
+          />
         </div>
         <div className="icon-bar"><Iconbar/></div>
         <div className="sidebar">
